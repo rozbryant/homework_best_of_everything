@@ -6,6 +6,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by(params[:id])
     @user.username
+    @favorite = Favorite.where({ :user_id => @user })
+    @favorite.all
   end
 
   def new
