@@ -5,8 +5,8 @@ class FavoritesController < ApplicationController
 
   def show
     @favorite = Favorite.find(params[:id])
-    @favorite.user_id = @user_id
-    @user_id.username = User.find(params[:id])
+    #@favorite.user_id = @user_id
+    #@user_id.username = User.find(params[:id])
 
   end
 

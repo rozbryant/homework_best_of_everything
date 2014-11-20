@@ -3,14 +3,18 @@
 </div>
 
 <dl class="dl-horizontal">
-  <dt>User</dt>
-  <dd><%= @favorite.user_id %></dd>
+  <dt>User Name</dt>
+  <dd><%= User.find_by({ :id => @favorite.user_id }).username  %></dd>
 
-  <dt>Dish</dt>
-  <dd><%= @favorite.dish_id %></dd>
+  <dt>Dish Name</dt>
+  <dd><%= Dish.find_by({ :id => @favorite.dish_id }).name %></dd>
 
-  <dt>Venue</dt>
-  <dd><%= @favorite.venue_id %></dd>
+  <dt>Venue Name</dt>
+  <dd><%= Venue.find_by({ :id => @favorite.venue_id }).name%></dd>
+
+<dt>Neighborhood Name</dt>
+  <dd><%= n = Venue.find_by({ :id => @favorite.venue_id }).neighborhood_id %>
+  <%= Neighborhood.find_by({ :id => n }).name %></dd>
 
   <dt>Notes</dt>
   <dd><%= @favorite.notes %></dd>
